@@ -1,6 +1,4 @@
----
 
-```
 # Zenkai - Social Media Platform
 
 **Zenkai** is a lightweight social media web application inspired by platforms like X (formerly Twitter). It allows users to register, log in, post updates (called **Kais**), like posts, and soon comment and interact in real-time.
@@ -70,6 +68,3 @@ socialmedia/
 
 Created with ❤️ by Aniket Kumar
 
----
-
-```
