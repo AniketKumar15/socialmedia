@@ -4,7 +4,7 @@ date_default_timezone_set('Asia/Kolkata');
 $currentUserId = $_SESSION['id'];
 
 // Get posts from DB (newest first)
-$sql = "SELECT posts.*, userdata.username, userdata.fullname 
+$sql = "SELECT posts.*, userdata.username, userdata.fullname, userdata.profile_pic 
         FROM posts 
         JOIN userdata ON posts.user_id = userdata.id 
         ORDER BY posts.created_at DESC";
@@ -44,6 +44,7 @@ if ($result && $result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $postId = $row['id'];
         $username = htmlspecialchars($row['username']);
+        $profilePic = !empty($row['profile_pic']) ? "../" . $row['profile_pic'] : './Img/avatar.png';
         $content = nl2br(htmlspecialchars($row['content']));
         $imageUrl = $row['image_url'];
         $videoUrl = $row['video_url'];
@@ -69,13 +70,24 @@ if ($result && $result->num_rows > 0) {
             $likeCount = $rowLikes['count'];
         }
         $likeCountQuery->close();
+
+        $commentCount = 0;
+        $commentCountQuery = $conn->prepare("SELECT COUNT(*) AS count FROM comments WHERE post_id = ?");
+        $commentCountQuery->bind_param("i", $postId);
+        $commentCountQuery->execute();
+        $commentCountResult = $commentCountQuery->get_result();
+        if ($commentCountResult && $rowComments = $commentCountResult->fetch_assoc()) {
+            $commentCount = $rowComments['count'];
+        }
+        $commentCountQuery->close();
+
         ?>
 
         <div class="post-card">
             <div class="post-header">
-                <img src="./Img/avatar.png" alt="User Avatar" class="avatar" />
+                <img src=<?= htmlspecialchars($profilePic) ?> alt="User Avatar" class="avatar" />
                 <div>
-                    <h3><a href="profile.php?user=<?= urlencode($username) ?>">@<?= $username ?></a></h3>
+                    <h3><a href="profile.php?user_id=<?= urlencode($row['user_id']) ?>">@<?= $username ?></a></h3>
                     <span class="timestamp"><?= $timeAgo ?></span>
                 </div>
             </div>
@@ -97,7 +109,9 @@ if ($result && $result->num_rows > 0) {
                 <span><i class="<?= $liked ? 'fas liked' : 'far' ?> fa-heart likeBtn" id="likeBtn"
                         data-post-id="<?= $row['id'] ?>"></i> <span class="like-count"><?= $likeCount ?></span></span>
 
-                <i class="far fa-comment"></i>
+                <span><i class="far fa-comment comment-btn" data-post-id="<?= $row['id'] ?>"></i> <span><?= $commentCount ?>
+                    </span></span>
+
                 <i class="fas fa-share"></i>
             </div>
         </div>

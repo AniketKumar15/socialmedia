@@ -1,0 +1,42 @@
+#commentForm {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#commentForm input {
+    border: none;
+    width: 100%;
+    padding: 3px 10px;
+    border-bottom: 1px #444 solid;
+    color: white;
+    background: transparent;
+    outline: none;
+}
+
+#commentForm button {
+    border: 1px #444 solid;
+    background: transparent;
+    color: white;
+    padding: 10px 12px;
+    border-radius: 50%;
+    transition: all .4s ease-in-out;
+}
+
+#commentForm button:hover {
+    background: white;
+    color: rgb(0, 0, 0);
+}
+
+.userInfoComment {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.userInfo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}

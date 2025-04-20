@@ -13,6 +13,10 @@ include "../Backend/db/db.php";
     <link rel="stylesheet" href="./Style/style.css">
     <link rel="stylesheet" href="./Style/navBarStyle.css">
     <link rel="stylesheet" href="./Style/postCardStyle.css">
+    <link rel="stylesheet" href="./Style/threePartStyle.css">
+    <link rel="stylesheet" href="./Style/postModelStyle.css">
+    <link rel="stylesheet" href="./Style/commentStyle.css">
+
 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -27,6 +31,9 @@ include "../Backend/db/db.php";
         <?php include "./components/leftSideBar.php" ?>
         <section class="postArea">
             <?php include "./components/postCard.php" ?>
+        </section>
+        <section class="commentArea" style="display: none;">
+
         </section>
 
         <?php include "./components/rightSideBar.php" ?>

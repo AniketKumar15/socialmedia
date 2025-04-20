@@ -1,0 +1,114 @@
+.postArea,
+.commentArea {
+    height: 100vh;
+    width: 500px;
+    padding: 10px 20px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    overflow: -moz-scrollbars-none;
+    /* Firefox */
+
+}
+
+.optionsList {
+    display: block;
+}
+
+.optionsListSmall {
+    display: none;
+}
+
+.leftSideBar,
+.rightSideBar {
+    position: sticky;
+    overflow-y: auto;
+
+    text-align: center;
+    height: 100%;
+    padding: 10px 0px;
+}
+
+.leftSideBar {
+    border-right: 1px #444 solid;
+}
+
+.rightSideBar {
+    border-left: 1px #444 solid;
+}
+
+.leftSideBar h1,
+.rightSideBar h1 {
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+li {
+    list-style: none;
+    text-decoration: none;
+    padding: 10px 20px;
+    width: 100%;
+    text-align: left;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+
+li:hover {
+    background-color: #2348c1;
+    color: #fff;
+}
+
+li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.NotificationsIcon {
+    font-size: 5px;
+}
+
+@media screen and (max-width: 805px) {
+
+    .rightSideBar {
+        display: none;
+    }
+
+    .leftSideBar h1 {
+        font-size: 17px;
+    }
+
+}
+
+/* Option List Show */
+@media screen and (max-width: 655px) {
+
+    .optionsList {
+        display: none;
+    }
+
+    .optionsListSmall {
+        display: block;
+    }
+
+    li {
+        list-style: none;
+        text-decoration: none;
+        padding: 10px 20px;
+        text-align: center;
+        font-weight: bold;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .leftSideBar h1 {
+        display: none;
+    }
+
+    li:hover {
+        background-color: #2348c1;
+        color: #fff;
+    }
+
+}

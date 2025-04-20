@@ -40,5 +40,30 @@ if ($conn->query($sql) !== TRUE) {
     die("Error creating likes table: " . $conn->error);
 }
 
+// Create comments table
+$sql = "CREATE TABLE IF NOT EXISTS comments (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    post_id INT NOT NULL,
+    content TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES userdata(id) ON DELETE CASCADE,
+    FOREIGN KEY (post_id) REFERENCES posts(id) ON DELETE CASCADE
+)";
+if ($conn->query($sql) !== TRUE) {
+    die("Error creating comments table: " . $conn->error);
+}
+$sql = "CREATE TABLE IF NOT EXISTS follows (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    follower_id INT NOT NULL,
+    following_id INT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE (follower_id, following_id),
+    FOREIGN KEY (follower_id) REFERENCES userdata(id) ON DELETE CASCADE,
+    FOREIGN KEY (following_id) REFERENCES userdata(id) ON DELETE CASCADE
+)";
+if ($conn->query($sql) !== TRUE) {
+    die("Error creating comments table: " . $conn->error);
+}
 
 ?>
