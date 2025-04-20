@@ -56,3 +56,112 @@ main {
 .add-post-btn i:active {
     transform: rotate(180deg);
 }
+
+.searchUserContainer {
+    background: white;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    border-radius: 20px;
+    padding-left: 15px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.searchUserContainer input {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+.searchUserContainer button {
+    background: #0d8bde;
+    color: white;
+    height: 100%;
+    width: 50px;
+    border-radius: 0px 20px 20px 0px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Responsive Search Result Box */
+.searchResult {
+    display: none;
+    position: absolute;
+    /* Adjust based on header/nav */
+    left: 52%;
+    transform: translateX(-50%);
+    padding: 15px;
+    background: #545454;
+    height: 50vh;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 460px;
+    z-index: 10;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    box-sizing: border-box;
+}
+
+.search-userInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    background: #000000;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.userProfileSearch {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    min-width: 0;
+}
+
+.search-userInfo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.viewProfile {
+    text-decoration: none;
+    background: #1da1f2;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+    white-space: nowrap;
+}
+
+/* Media Query for Small Screens */
+@media (max-width: 500px) {
+    .searchResult {
+        height: 60vh;
+        padding: 10px;
+    }
+
+    .search-userInfo {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .userProfileSearch {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .viewProfile {
+        align-self: flex-end;
+        margin-top: 5px;
+    }
+}

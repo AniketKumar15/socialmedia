@@ -52,3 +52,47 @@ videoInput.addEventListener('change', () => {
         imageInput.value = ''; // reset image if video is selected
     }
 });
+
+const searchInput = document.querySelector(".searchUser");
+const searchBtn = document.querySelector(".searchBtn");
+const searchResult = document.querySelector(".searchResult");
+
+searchBtn.addEventListener("click", function () {
+    console.log("WOrk")
+    searchResult.style.display = "block";
+    const query = searchInput.value.trim();
+    if (!query) return;
+
+    fetch(`http://localhost/socialmedia/backend/api/searchUsers.php?query=${encodeURIComponent(query)}`)
+        .then(res => res.json())
+        .then(data => {
+            searchResult.innerHTML = '';
+            if (data.length === 0) {
+                searchResult.innerHTML = '<p style="color:white">No users found</p>';
+                return;
+            }
+
+            data.forEach(user => {
+                const profilePic = user.profile_pic ? `../${user.profile_pic}` : './Img/avatar.png';
+                const userHTML = `
+                    <div class="search-userInfo">
+                        <div class="userProfileSearch">
+                            <img src="${profilePic}" alt="">
+                            <div>
+                                <h3>${user.fullname}</h3>
+                                <p>@${user.username}</p>
+                            </div>
+                        </div>
+                        <a href="profile.php?user_id=${user.id}" class="viewProfile">viewProfile</a>
+                    </div>`;
+                searchResult.innerHTML += userHTML;
+            });
+        });
+});
+window.addEventListener("click", (e) => {
+    const isInsideSearch = e.target.closest(".searchUserContainer") || e.target.closest(".searchResult");
+    if (!isInsideSearch) {
+        searchResult.style.display = "none";
+    }
+});
+

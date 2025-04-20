@@ -7,12 +7,4 @@
         <li><a href="#"> Friend 4</a></li>
         <li><a href="#"> Friend 5</a></li>
     </ul>
-    <h1>Trending</h1>
-    <ul class="trendingList">
-        <li><a href="#">#TrendingTopic1</a></li>
-        <li><a href="#">#TrendingTopic2</a></li>
-        <li><a href="#">#TrendingTopic3</a></li>
-        <li><a href="#">#TrendingTopic4</a></li>
-        <li><a href="#">#TrendingTopic5</a></li>
-    </ul>
 </aside>

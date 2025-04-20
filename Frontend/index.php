@@ -30,6 +30,7 @@ include "../Backend/db/db.php";
     <main>
         <?php include "./components/leftSideBar.php" ?>
         <section class="postArea">
+            <?php include "./components/searchUser.php"; ?>
             <?php include "./components/postCard.php" ?>
         </section>
         <section class="commentArea" style="display: none;">
