@@ -24,7 +24,7 @@
 .rightSideBar {
     position: sticky;
     overflow-y: auto;
-
+    min-width: 152px;
     text-align: center;
     height: 100%;
     padding: 10px 0px;
@@ -76,6 +76,10 @@ li a {
         display: none;
     }
 
+    .leftSideBar {
+        min-width: auto;
+    }
+
     .leftSideBar h1 {
         font-size: 17px;
     }
@@ -91,6 +95,10 @@ li a {
 
     .optionsListSmall {
         display: block;
+    }
+
+    .leftSideBar {
+        min-width: auto;
     }
 
     li {
