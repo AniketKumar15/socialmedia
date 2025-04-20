@@ -1,5 +1,10 @@
 
-# <div style="display: flex; gap:5px; align-items: center;"><img src="./Frontend/Img/LogoIconLight.png" height="60px" style="border-radius: 50%;">enkai - Social Media Platform</div>
+# <p>
+  <img src="./Frontend/Img/LogoIconLight.png" alt="Zenkai Logo" width="60" style="border-radius: 50%;">
+  <h1>Zenkai - Social Media Platform</h1>
+</p>
+
+
 
 **Zenkai** is a lightweight social media web application inspired by platforms like X (formerly Twitter). It allows users to register, log in, post updates (called **Kais**), like posts, and soon comment and interact in real-time.
 
