@@ -80,7 +80,6 @@ if ($result && $result->num_rows > 0) {
             $commentCount = $rowComments['count'];
         }
         $commentCountQuery->close();
-
         ?>
 
         <div class="post-card">

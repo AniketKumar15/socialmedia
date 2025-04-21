@@ -96,3 +96,32 @@ window.addEventListener("click", (e) => {
     }
 });
 
+// Notification
+function openNotifications() {
+    document.getElementById('notificationModal').style.display = 'block';
+
+    fetch('../../backend/api/getNotifications.php')
+        .then(res => res.json())
+        .then(data => {
+            const list = document.getElementById("notificationList");
+            list.innerHTML = "";
+
+            if (data.status === "success") {
+                data.notifications.forEach(n => {
+                    let message = "";
+
+                    if (n.type === "like") message = "liked your post";
+                    if (n.type === "comment") message = "commented on your post";
+                    if (n.type === "follow") message = "followed you";
+
+                    list.innerHTML += `
+                        <div class="notif">
+                            <img src="${n.profile_pic ? '../' + n.profile_pic : './img/avatar.png'}" width="30">
+                            <span><strong>@${n.username}</strong> ${message}</span>
+                        </div>
+                    `;
+                });
+            }
+        });
+}
+

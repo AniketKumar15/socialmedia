@@ -1,0 +1,21 @@
+.notificationsContainer {
+    padding: 20px;
+    background: #111;
+}
+
+.notificationCard {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #222;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    color: white;
+}
+
+.notificationCard img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}

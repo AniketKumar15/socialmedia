@@ -1,6 +1,10 @@
 <?php
 session_start();
 include "../Backend/db/db.php";
+
+if (!isset($_SESSION["id"])) {
+    header("Location: ./account.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

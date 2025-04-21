@@ -66,4 +66,19 @@ if ($conn->query($sql) !== TRUE) {
     die("Error creating comments table: " . $conn->error);
 }
 
+$sql = "CREATE TABLE IF NOT EXISTS notifications (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL, -- who receives the notification
+    sender_id INT NOT NULL, -- who triggered it (e.g. liker/commenter)
+    post_id INT DEFAULT NULL,
+    type ENUM('like', 'comment', 'follow') NOT NULL,
+    is_read BOOLEAN DEFAULT FALSE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES userdata(id),
+    FOREIGN KEY (sender_id) REFERENCES userdata(id)
+)";
+if ($conn->query($sql) !== TRUE) {
+    die("Error creating comments table: " . $conn->error);
+}
+
 ?>
