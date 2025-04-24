@@ -1,17 +1,26 @@
 .notificationsContainer {
     padding: 20px;
-    background: #111;
 }
 
 .notificationCard {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
     gap: 10px;
     background: #222;
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 10px;
     color: white;
+}
+
+.notificationCard a {
+    text-decoration: none;
+}
+
+.notificationUser {
+    display: flex;
+    gap: 10px;
 }
 
 .notificationCard img {

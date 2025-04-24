@@ -1,23 +1,10 @@
 <?php
-require_once('../backend/db/db.php');
 session_start();
+include "../Backend/db/db.php";
 
-if (!isset($_SESSION['id'])) {
-    header("Location: login.php");
-    exit;
+if (!isset($_SESSION["id"])) {
+    header("Location: ./account.php");
 }
-
-$userId = $_SESSION['id'];
-
-// Fetch notifications (example for likes & comments)
-$stmt = $conn->prepare("SELECT n.*, u.username, u.profile_pic 
-        FROM notifications n 
-        JOIN userdata u ON n.sender_id = u.id 
-        WHERE n.user_id = ? 
-        ORDER BY n.created_at DESC");
-$stmt->bind_param("i", $userId);
-$stmt->execute();
-$result = $stmt->get_result();
 ?>
 <!DOCTYPE html>
 <html>
@@ -40,23 +27,13 @@ $result = $stmt->get_result();
         <?php include "./components/leftSideBar.php" ?>
         <section class="postArea">
             <h2>Notifications</h2>
-            <div class="notificationsContainer">
-                <?php while ($row = $result->fetch_assoc()): ?>
-                    <div class="notificationCard">
-                        <img src="<?= !empty($row['profile_pic']) ? '../' . $row['profile_pic'] : './img/avatar.png' ?>"
-                            alt="Profile">
-                        <div>
-                            <p><strong>@<?= htmlspecialchars($row['username']) ?></strong>
-                                <?= htmlspecialchars($row['action']) ?></p>
-                            <small><?= timeAgo($row['created_at']) ?></small>
-                        </div>
-                    </div>
-                <?php endwhile; ?>
+            <div class="notificationsContainer" id="notificationsContainer">
+                <p>Loading notifications...</p>
             </div>
         </section>
         <?php include "./components/rightSideBar.php" ?>
     </main>
-
+    <script src="./js/notifications.js"></script>
 </body>
 
 </html>

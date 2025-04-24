@@ -4,11 +4,13 @@ session_start();
 
 $user_id = $_SESSION['id'];
 
-$stmt = $conn->prepare("SELECT n.*, u.username, u.fullname, u.profile_pic 
+$stmt = $conn->prepare("SELECT n.*, u.username, u.profile_pic, p.content AS post_content 
     FROM notifications n 
     JOIN userdata u ON n.sender_id = u.id 
+    LEFT JOIN posts p ON n.post_id = p.id
     WHERE n.user_id = ? 
     ORDER BY n.created_at DESC");
+
 
 $stmt->bind_param("i", $user_id);
 $stmt->execute();
