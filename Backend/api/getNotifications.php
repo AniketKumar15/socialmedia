@@ -18,6 +18,7 @@ $result = $stmt->get_result();
 
 $notifications = [];
 while ($row = $result->fetch_assoc()) {
+
     $notifications[] = $row;
 }
 

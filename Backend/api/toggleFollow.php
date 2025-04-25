@@ -34,7 +34,16 @@ if ($result->num_rows > 0) {
     // Follow
     $insert = $conn->prepare("INSERT INTO follows (follower_id, following_id) VALUES (?, ?)");
     $insert->bind_param("ii", $user_id, $target_id);
-    $insert->execute();
-    echo json_encode(['status' => 'followed']);
+    if ($insert->execute()) {
+        // Send notification
+        $notif = $conn->prepare("INSERT INTO notifications (user_id, sender_id, type) VALUES (?, ?, 'follow')");
+        $notif->bind_param("ii", $target_id, $user_id);
+        $notif->execute();
+        $notif->close();
+
+        echo json_encode(['status' => 'followed']);
+    } else {
+        echo json_encode(['status' => 'error', 'message' => 'Failed to follow']);
+    }
 }
 ?>

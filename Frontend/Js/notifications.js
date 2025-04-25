@@ -20,13 +20,14 @@ function timeAgo(dateString) {
     }
     return "just now";
 }
-
+console.log("askfnakn00");
 document.addEventListener('DOMContentLoaded', () => {
     fetch('http://localhost/socialmedia/backend/api/getNotifications.php')
         .then(res => res.json())
         .then(data => {
             const container = document.getElementById('notificationsContainer');
             container.innerHTML = '';
+
 
             if (data.status === 'success') {
                 if (data.notifications.length === 0) {
@@ -43,22 +44,34 @@ document.addEventListener('DOMContentLoaded', () => {
                     } else if (notification.type === 'follow') {
                         actionText = 'followed you';
                     }
+
                     const div = document.createElement('div');
                     div.className = 'notificationCard';
 
-                    div.innerHTML = `
+                    // Build the base HTML
+                    let innerHTML = `
                         <div class="notificationUser">
                             <img src="${notification.profile_pic ? '../' + notification.profile_pic : './img/avatar.png'}" alt="Profile">
                             <div>
                                 <p><strong>@${notification.username}</strong> ${actionText}</p>
                                 <small>${timeAgo(notification.created_at)}</small>
                             </div>
-                        </div>
+                        </div>`;
+
+                    // Only include post content and "show more" if this is a post-related notification
+                    if (notification.post_id && notification.post_content) {
+                        const preview = notification.post_content.length > 100
+                            ? notification.post_content.slice(0, 100) + '...'
+                            : notification.post_content;
+
+                        innerHTML += `
                         <div>
-                            <p>${notification.post_content.slice(0, 100)}</p>
-                            <a href='http://localhost/socialmedia/Frontend/index.php?post_id=${notification.post_id}'>show More</a>
-                        </div>
-                            `;
+                            <p>${preview}</p>
+                            <a href='http://localhost/socialmedia/Frontend/index.php?post_id=${notification.post_id}'>Show More</a>
+                        </div>`;
+                    }
+
+                    div.innerHTML = innerHTML;
                     container.appendChild(div);
                 });
             } else {

@@ -120,6 +120,7 @@ li a {
 
 .NotificationsIcon {
     font-size: 5px;
+    color: rgb(255, 0, 0);
 }
 
 @media screen and (max-width: 805px) {
