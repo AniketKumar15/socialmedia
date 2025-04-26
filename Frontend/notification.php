@@ -1,3 +1,15 @@
+<script>
+    fetch('http://localhost/socialmedia/backend/api/markNotificationsRead.php', {
+        method: 'POST'
+    })
+        .then(res => res.json())
+        .then(data => {
+            if (data.status === 'success') {
+                document.querySelector('.NotificationsIcon').style.display = 'none';
+            }
+        });
+
+</script>
 <?php
 session_start();
 include "../Backend/db/db.php";
@@ -10,6 +22,9 @@ if (!isset($_SESSION["id"])) {
 <html>
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./Img/LogoIcon.png" type="image/x-icon">
     <title>Notifications</title>
     <link rel="stylesheet" href="./Style/style.css">
     <link rel="stylesheet" href="./Style/navBarStyle.css">
@@ -34,6 +49,7 @@ if (!isset($_SESSION["id"])) {
         <?php include "./components/rightSideBar.php" ?>
     </main>
     <script src="./js/notifications.js"></script>
+    <script src="./js/checkNotification.js"></script>
 </body>
 
 </html>

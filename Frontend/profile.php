@@ -147,16 +147,13 @@ $stmt->close();
         </section>
 
         <?php include "./components/rightSideBar.php" ?>
-        <label class="add-post-wrapper">
-            <button class="add-post-btn" title="Add New Post">
-                <i class="fas fa-plus"></i>
-            </button>
-        </label>
+
 
         <?php include "./components/profileEditModel.php"; ?>
 
     </main>
     <script src="./js/followers.js"></script>
+    <script src="./js/checkNotification.js"></script>
     <script>
         console.log("helloNew")
         document.addEventListener('DOMContentLoaded', async () => {

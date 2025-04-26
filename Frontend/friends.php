@@ -71,11 +71,6 @@ $result = $stmt->get_result();
         </section>
 
         <?php include "./components/rightSideBar.php" ?>
-        <label class="add-post-wrapper">
-            <button class="add-post-btn" title="Add New Post">
-                <i class="fas fa-plus"></i>
-            </button>
-        </label>
 
     </main>
 
@@ -83,6 +78,7 @@ $result = $stmt->get_result();
 
     <script src="./js/uploadPost.js"></script>
     <script src="./js/main.js"></script>
+    <script src="./js/checkNotification.js"></script>
 </body>
 
 </html>

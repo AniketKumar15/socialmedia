@@ -25,7 +25,8 @@
                 <li><a href="friends.php?user_id=<?= urlencode($_SESSION['id']) ?>"><i
                                         class="fa-solid fa-users"></i></a></li>
                 <li><a href="#"><i class="fa-solid fa-comment"></i></a></li>
-                <li><a href="#"><i class="fa-solid fa-bell"></i></a></li>
+                <li><a href="notification.php"><i class="fa-solid fa-bell NotificationsIconMobile"></i></a>
+
                 <li><a href="#"><i class="fa-solid fa-gear"></i></a></li>
                 <li><a href="#"><i class="fa-solid fa-circle-info"></i></a></li>
                 <li><a href="http://localhost/socialmedia/Backend/api/logout.php"><i

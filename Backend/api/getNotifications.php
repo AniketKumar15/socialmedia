@@ -16,11 +16,14 @@ $stmt->bind_param("i", $user_id);
 $stmt->execute();
 $result = $stmt->get_result();
 
+$unreadCount = 0;
 $notifications = [];
 while ($row = $result->fetch_assoc()) {
-
+    if ($row['is_read'] == 0) {
+        $unreadCount++;
+    }
     $notifications[] = $row;
 }
 
-echo json_encode(['status' => 'success', 'notifications' => $notifications]);
+echo json_encode(['status' => 'success', 'notifications' => $notifications, 'unreadCount' => $unreadCount]);
 ?>
