@@ -15,12 +15,20 @@
 - ❤️ Like/Unlike functionality
 - ⏱️ Time ago feature for posts
 - 🖼️ Dynamic media preview
-- 💬 Upcoming: Comments system
+- 💬 Comments system
+- 🙎‍♂️ Follow, unfollow and follow back functionality
+- 😊 Friends display
+- 🔔 Notification system with notification dot
 - 📱 Responsive design (Desktop & Mobile)
 - 🎯 Clean and simple layout with three main sections:
   - Left sidebar (navigation)
   - Center feed (posts)
   - Right sidebar (recommendations/future widgets)
+
+## ⚒️ Upcoming Features
+- 🗣️ Messages functionality
+- ⚙️ Setting
+- 👾 More
 
 ## 📁 Project Structure
 
