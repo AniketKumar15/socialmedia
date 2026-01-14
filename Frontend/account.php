@@ -36,6 +36,7 @@
     </div>
 
     <script src="./Js/accountApp.js"></script>
+    <script src="./js/theme.js"></script>
 </body>
 
 </html>

@@ -12,8 +12,8 @@
                                 Notifications <i class="fa-solid fa-circle NotificationsIcon"
                                         style="display: none"></i></a>
                 </li>
-                <li><a href="#"><i class="fa-solid fa-gear"></i> Settings</a></li>
-                <li><a href="#"><i class="fa-solid fa-circle-info"></i> About</a></li>
+                <li><a href="setting.php"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                <li><a href="About.php"><i class="fa-solid fa-circle-info"></i> About</a></li>
                 <li><a href="http://localhost/socialmedia/Backend/api/logout.php"><i
                                         class="fa-solid fa-right-from-bracket"></i>
                                 Logout</a></li>
@@ -27,8 +27,8 @@
                 <li><a href="#"><i class="fa-solid fa-comment"></i></a></li>
                 <li><a href="notification.php"><i class="fa-solid fa-bell NotificationsIconMobile"></i></a>
 
-                <li><a href="#"><i class="fa-solid fa-gear"></i></a></li>
-                <li><a href="#"><i class="fa-solid fa-circle-info"></i></a></li>
+                <li><a href="setting.php"><i class="fa-solid fa-gear"></i></a></li>
+                <li><a href="About.php"><i class="fa-solid fa-circle-info"></i></a></li>
                 <li><a href="http://localhost/socialmedia/Backend/api/logout.php"><i
                                         class="fa-solid fa-right-from-bracket"></i></a></li>
         </ul>

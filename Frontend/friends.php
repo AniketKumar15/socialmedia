@@ -28,7 +28,7 @@ $result = $stmt->get_result();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zenkai - Home</title>
+    <title>Zenkai - Friends</title>
     <link rel="shortcut icon" href="./Img/LogoIcon.png" type="image/x-icon">
     <link rel="stylesheet" href="./Style/style.css">
     <link rel="stylesheet" href="./Style/navBarStyle.css">
@@ -79,6 +79,7 @@ $result = $stmt->get_result();
     <script src="./js/uploadPost.js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/checkNotification.js"></script>
+    <script src="./js/theme.js"></script>
 </body>
 
 </html>

@@ -6,8 +6,13 @@
         <form id="editProfileForm" enctype="multipart/form-data">
             <div class="avatar-preview">
                 <img id="previewImage" src="" alt="Profile Preview">
-                <input type="file" id="profilePic" name="profile_pic" accept="image/*"
-                    onchange="previewProfilePic(event)">
+                <div class="profileUpdateLable">
+                    <label for="profilePic">
+                        <i class="fas fa-image"></i> Upload Image
+                    </label>
+                    <input type="file" id="profilePic" name="profile_pic" accept="image/*"
+                        onchange="previewProfilePic(event)" hidden>
+                </div>
             </div>
 
             <label>Full Name</label>

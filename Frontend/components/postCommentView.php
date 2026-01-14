@@ -111,11 +111,11 @@ function timeAgo($datetime, $full = false)
         <p>No comments yet. Be the first to comment!</p>
     <?php else: ?>
         <?php foreach ($comments as $comment): ?>
-            <div class="comment" style="border-bottom: 1px solid #ccc; padding: 10px 0;">
+            <div class="comment">
                 <div class="userInfoComment">
                     <div class="userInfo">
                         <img src=<?= htmlspecialchars(!empty($comment['profile_pic']) ? "../" . $comment['profile_pic'] : './Img/avatar.png') ?> alt="User Avatar" class="avatar" />
-                        <strong>@<?= htmlspecialchars($comment['username']) ?>:</strong>
+                        <strong>@<?= htmlspecialchars($comment['username']) ?></strong>
                     </div>
                     <small><?= timeAgo($comment['created_at']) ?></small>
                 </div>

@@ -50,6 +50,7 @@ if (!isset($_SESSION["id"])) {
     </main>
     <script src="./js/notifications.js"></script>
     <script src="./js/checkNotification.js"></script>
+    <script src="./js/theme.js"></script>
 </body>
 
 </html>

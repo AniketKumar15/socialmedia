@@ -38,7 +38,6 @@ if (!isset($_SESSION["id"])) {
             <?php include "./components/postCard.php" ?>
         </section>
         <section class="commentArea" style="display: none;">
-
         </section>
 
         <?php include "./components/rightSideBar.php" ?>
@@ -55,6 +54,7 @@ if (!isset($_SESSION["id"])) {
     <script src="./js/uploadPost.js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/checkNotification.js"></script>
+    <script src="./js/theme.js"></script>
 </body>
 
 </html>

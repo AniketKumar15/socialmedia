@@ -58,10 +58,12 @@ const searchBtn = document.querySelector(".searchBtn");
 const searchResult = document.querySelector(".searchResult");
 
 searchBtn.addEventListener("click", function () {
-    console.log("WOrk")
-    searchResult.style.display = "block";
     const query = searchInput.value.trim();
-    if (!query) return;
+    if (!query) {
+        alert("Please enter a search term");
+        return
+    };
+    searchResult.style.display = "block";
 
     fetch(`http://localhost/socialmedia/backend/api/searchUsers.php?query=${encodeURIComponent(query)}`)
         .then(res => res.json())

@@ -1,69 +1,93 @@
 nav {
-    z-index: 2;
-    background-color: #000000;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    border-bottom: 1px solid #444;
+
+    padding: 12px 24px;
     width: 100%;
-    position: sticky;
-    top: 0;
+
+    background: rgba(10, 12, 20, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+/* Logo Area */
 .logoContainer {
     display: flex;
-    justify-content: center;
     align-items: center;
     gap: 3px;
-    padding: 3px;
 }
 
 .logoContainer img {
-    width: 35px;
-    height: 35px;
+    width: 34px;
+    height: 34px;
     border-radius: 50%;
 }
 
-.logoContainer h1 {
-    margin-bottom: 7px;
+.logoText {
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
+/* Login Button */
 .loginBtn {
     text-decoration: none;
-    color: black;
-    background-color: #fff;
-    padding: 10px 20px;
-    border-radius: 20px;
-    font-weight: bold;
-    transition: all 0.3s ease-in-out;
+    color: #eaeaf0;
+
+    background: rgba(165, 180, 252, 0.15);
+    border: 1px solid rgba(165, 180, 252, 0.35);
+
+    padding: 8px 18px;
+    border-radius: 999px;
+
+    font-weight: 500;
+    transition: all 0.25s ease;
 }
 
 .loginBtn:hover {
-    border: 1px solid #fff;
-    background-color: transparent;
-    color: #fff;
+    background: rgba(165, 180, 252, 0.25);
 }
 
+/* User Profile */
 .userProfile {
     display: flex;
-    justify-content: center;
     align-items: center;
-    gap: 3px;
-    padding: 3px;
+    gap: 8px;
     cursor: pointer;
+    position: relative;
 }
 
 .userProfile img {
-    width: 35px;
-    height: 35px;
+    width: 34px;
+    height: 34px;
     border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
+.username {
+    font-weight: 500;
+    color: #eaeaf0;
+    font-size: 0.95rem;
+}
+
+/* Dropdown Menu */
 .userProfile:hover {
     .dropdown {
-        display: flex;
+
+        opacity: 1;
+        transform: translateY(0);
     }
+}
+
+.dropbtn {
+    color: #a1a1b3;
 }
 
 .dropdown {
@@ -72,11 +96,18 @@ nav {
     height: 120px;
     width: 120px;
     top: 30px;
-    display: none;
+    opacity: 0;
+    transform: translateY(-6px);
+    transition: all 0.2s ease;
+
 }
 
 .dropdown-content {
-    background: white;
+    background: rgba(20, 22, 35, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -89,15 +120,15 @@ nav {
 
 .dropdown a {
     text-decoration: none;
-    color: black;
-    padding: 10px 20px;
+    color: #eaeaf0;
+    padding: 10px 16px;
     width: 100%;
     text-align: center;
-    font-weight: bold;
-    transition: all 0.3s ease-in-out;
+    font-size: 0.9rem;
+    transition: background 0.3s ease-in-out;
 }
 
-.dropdown a:hover {
-    background-color: #2348c1;
-    color: #fff;
+.dropdown-content a:hover {
+    background: rgba(165, 180, 252, 0.18);
+    border-radius: 12px;
 }
