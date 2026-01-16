@@ -356,6 +356,15 @@ li a {
     }
 }
 
+.menuBtn {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+}
+
 
 /* =========================
    EXTRA SMALL DEVICES
@@ -366,7 +375,38 @@ li a {
         grid-template-columns: 1fr;
     }
 
+    .menuBtn {
+        display: block;
+    }
+
     .leftSideBar {
+        position: fixed;
+        top: 0;
+        left: -260px;
+        /* hidden */
+        height: 100vh;
+        width: 240px;
+        background: #111;
+        z-index: 1000;
+        padding-top: 64px;
+        transition: all 0.3s ease;
+        /* avoid header overlap */
+    }
+
+    .leftSideBar.active {
+        left: 0;
+    }
+
+    .leftSideBar h1 {
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .optionsList {
+        display: flex;
+    }
+
+    .optionsListSmall {
         display: none;
     }
 }

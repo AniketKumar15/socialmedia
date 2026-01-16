@@ -32,4 +32,13 @@
                 <li><a href="http://localhost/socialmedia/Backend/api/logout.php"><i
                                         class="fa-solid fa-right-from-bracket"></i></a></li>
         </ul>
+
+        <script>
+                const menuBtn = document.getElementById("menuBtn");
+                const sidebar = document.querySelector(".leftSideBar");
+
+                menuBtn.addEventListener("click", () => {
+                        sidebar.classList.toggle("active");
+                });
+        </script>
 </aside>
