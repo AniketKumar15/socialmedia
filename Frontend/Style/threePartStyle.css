@@ -98,9 +98,10 @@
 
 /* Hover */
 .optionsList li a:hover {
-    background: rgba(88, 101, 242, 0.15);
-    border-color: rgba(88, 101, 242, 0.4);
+    background: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.4);
     transform: translateX(4px);
+
 }
 
 /* Active state (manually add class="active") */
@@ -278,11 +279,11 @@ li a {
 /* =========================
    NOTIFICATION DOTS
 ========================= */
-.NotificationsIcon {
+.optionsList li a i.NotificationsIcon {
+    color: #ff3b3b;  /* red wins now */
     font-size: 6px;
-    color: #ff3b3b;
-    margin-left: auto;
 }
+
 
 .NotificationsIconMobile {
     color: white;

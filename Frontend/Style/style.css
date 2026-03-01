@@ -32,8 +32,8 @@ html {
 }
 
 html.light {
-    background:
-        radial-gradient(1400px circle at top left,
+    background:#4f60fc ;
+        /* radial-gradient(1400px circle at top left,
             rgba(88, 101, 242, 0.25),
             transparent 70%),
         radial-gradient(1200px circle at bottom right,
@@ -42,7 +42,7 @@ html.light {
         linear-gradient(180deg,
             #1a1d2b,
             #141624,
-            #0f111a);
+            #0f111a); */
 
     background-attachment: fixed;
     color: #eaeaf0;
@@ -52,8 +52,6 @@ html.light {
 body {
     background: transparent;
 }
-
-
 
 main {
     width: 100%;
@@ -81,8 +79,8 @@ main {
     justify-content: center;
 
     background: linear-gradient(135deg,
-            rgba(236, 72, 153, 0.35),
-            rgba(236, 72, 153, 0.15));
+            rgba(236, 72, 153, 0.5),
+            rgba(236, 72, 153, 0.5));
 
     backdrop-filter: blur(10px);
     border: 1px solid rgba(236, 72, 153, 0.45);

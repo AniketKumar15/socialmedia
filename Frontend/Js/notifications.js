@@ -50,13 +50,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     // Build the base HTML
                     let innerHTML = `
-                        <div class="notificationUser">
-                            <img src="${notification.profile_pic ? '../' + notification.profile_pic : './img/avatar.png'}" alt="Profile">
-                            <div>
-                                <p><strong>@${notification.username}</strong> ${actionText}</p>
-                                <small>${timeAgo(notification.created_at)}</small>
-                            </div>
-                        </div>`;
+    <div class="notificationUser">
+        <img src="${notification.profile_pic ? '../' + notification.profile_pic : './img/avatar.png'}" alt="Profile">
+        <div>
+            <a href="profile.php?user_id=${encodeURIComponent(notification.sender_id)}">
+                <strong>@${notification.username}</strong> ${actionText}
+            </a>
+            <small>${timeAgo(notification.created_at)}</small>
+        </div>
+    </div>`;
 
                     // Only include post content and "show more" if this is a post-related notification
                     if (notification.post_id && notification.post_content) {

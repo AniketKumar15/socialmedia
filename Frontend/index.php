@@ -28,7 +28,7 @@ if (!isset($_SESSION["id"])) {
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body>
+<body class="polka">
     <?php include "./components/navBar.php"; ?>
 
     <main>

@@ -6,7 +6,7 @@ include "../db/db.php";
 if (!isset($_SESSION["id"]) || !isset($_SESSION["username"])) {
     echo "<script>
         alert('Unauthorized access. Please login again.');
-        window.location.href='../../Frontend/login.php';
+        window.location.href='../../Frontend/account.php';
     </script>";
     exit;
 }
@@ -41,7 +41,7 @@ if ($stmt->execute()) {
 
     echo "<script>
         alert('Your account has been permanently deleted.');
-        window.location.href='../../Frontend/login.php';
+        window.location.href='../../Frontend/account.php';
     </script>";
 
 } else {
